@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../Card/Card";
 
-const list = ({ cars }) => {
-  console.log(cars);
+const List = ({ cars }) => {
+  const [activeCard, setActiveCard] = useState("");
+  // console.log(cars);
+  console.log(activeCard);
   return (
     <div
       style={{
@@ -12,10 +14,15 @@ const list = ({ cars }) => {
       }}>
       {cars.map(item => (
         // <span key={item.id}>{item.model}</span>
-        <Card key={item.id} item={item} />
+        <Card
+          key={item.id}
+          item={item}
+          activeCard={activeCard}
+          setActiveCard={setActiveCard}
+        />
       ))}
     </div>
   );
 };
 
-export default list;
+export default List;

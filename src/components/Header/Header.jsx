@@ -1,10 +1,19 @@
 import React from "react";
+// import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 
-const Header = ({ logo }) => {
-  console.log(logo);
+const Header = ({ logo, cars }) => {
+  // console.log(logo);
+  console.log(cars, "cars");
   return (
-    <div>
-      <img src={logo} alt="" width={"300px"} />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}>
+      <img src={logo} alt="" width="200px" />
+      <Navbar cars={cars} />
     </div>
   );
 };
